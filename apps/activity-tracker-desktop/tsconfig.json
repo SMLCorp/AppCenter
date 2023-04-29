@@ -1,31 +1,29 @@
 {
   "extends": "../../tsconfig.base.json",
-
   "compilerOptions": {
-    "moduleResolution": "node",
     "target": "es2017",
+    "useDefineForClassFields": true,
+    "resolveJsonModule": true,
     /**
-      Svelte Preprocess cannot figure out whether you have a value or a type, so tell TypeScript
-      to enforce using `import type` instead of `import` for Types.
+     * Typecheck JS in `.svelte` and `.js` files by default.
+     * Disable checkJs if you'd like to use dynamic types in JS.
+     * Note that setting allowJs false does not prevent the use
+     * of JS in `.svelte` files.
      */
-    "importsNotUsedAsValues": "error",
+    "allowJs": true,
+    "checkJs": true,
     "isolatedModules": true,
-    /**
-      To have warnings/errors of the Svelte compiler at the correct position,
-      enable source maps by default.
-     */
+    "moduleResolution": "node",
+    "importsNotUsedAsValues": "error",
     "sourceMap": true,
-    /** Requests the runtime types from the svelte modules by default. Needed for TS files or else you get errors. */
-    "types": ["svelte"],
-
-    "strict": false,
+    "types": [
+      "svelte"
+    ],
+    "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    /** Needed for the vite-tsconfig-paths vite plugin. */
-    "checkJs": true
+    "forceConsistentCasingInFileNames": true
   },
-  "files": [],
   "include": [],
   "references": [
     {

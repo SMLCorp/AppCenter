@@ -1,30 +1,22 @@
 module.exports = {
+  "extends": [
+    "../../.eslintrc.json",
+    "plugin:svelte/recommended",
+    "plugin:svelte/prettier",
+  ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["svelte3", "@typescript-eslint"],
-  "extends": ["../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*", "vitest.config.ts"],
+  "parserOptions": {
+    "project": ["apps/activity-tracker-desktop/tsconfig.?*.json"],
+    "extraFileExtensions": [".svelte"]
+  },
+  "ignorePatterns": [ "!**/*", "vite.config.ts", "vite-env.d.ts", "vitest.config.ts" ],
   "overrides": [
     {
-      "files": ["*.ts", "*.js", "*.svelte"],
-      "parserOptions": {
-        "project": ["apps/activity-tracker-desktop/tsconfig.*?.json"]
-      },
-      "rules": {}
-    },
-    {
-      "files": ["*.ts", "*.tsx"],
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "rules": {}
-    },
-    {
       "files": ["*.svelte"],
-      "processor": "svelte3/svelte3"
+      "parser": "svelte-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser"
+      }
     }
-  ],
-  "settings": {
-    'svelte3/typescript': require('typescript')
-  }
+  ]
 }

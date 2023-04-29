@@ -8,17 +8,22 @@
       "executor": "@nx-go/nx-go:build",
       "options": {
         "outputPath": "dist/apps/manga-reader-api",
-        "main": "apps/manga-reader-api/main.go"
+        "main": "apps/manga-reader-api/src/main.go"
       }
     },
     "serve": {
       "executor": "@nx-go/nx-go:serve",
       "options": {
-        "main": "apps/manga-reader-api/main.go"
+        "main": "apps/manga-reader-api/src/main.go"
       }
     },
     "test": {
-      "executor": "@nx-go/nx-go:test"
+      "executor": "@nx-go/nx-go:test",
+      "configurations": {
+        "ci": {
+          "skipRace": true
+        }
+      }
     },
     "lint": {
       "executor": "@nx-go/nx-go:lint"

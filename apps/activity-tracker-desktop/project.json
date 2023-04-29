@@ -5,13 +5,29 @@
   "projectType": "application",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nxext/vite:build",
+    "build-all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/activity-tracker-desktop",
+        "commands": [
+          {
+            "command": "pnpm tauri build",
+            "forwardAllArgs": false
+          }
+        ],
+        "colors": true,
+        "parallel": false
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "build-front": {
+      "executor": "@nrwl/vite:build",
       "outputs": [
         "{options.outputPath}"
       ],
       "options": {
-        "frameworkConfigFile": "@nxext/svelte/plugins/vite",
         "outputPath": "dist/apps/activity-tracker-desktop",
         "assets": [
           {
@@ -26,30 +42,48 @@
         "production": {}
       }
     },
-    "serve": {
-      "executor": "@nxext/vite:dev",
+    "serve-front": {
+      "executor": "@nrwl/vite:dev-server",
+      "defaultConfiguration": "development",
       "options": {
-        "frameworkConfigFile": "@nxext/svelte/plugins/vite",
-        "outputPath": "dist/apps/activity-tracker-desktop",
-        "assets": [
-          {
-            "glob": "/*",
-            "input": "./public/**",
-            "output": "./"
-          }
-        ],
-        "tsConfig": "apps/activity-tracker-desktop/tsconfig.app.json"
+        "buildTarget": "activity-tracker-desktop:build-front"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "activity-tracker-desktop:build-front:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "activity-tracker-desktop:build-front:production",
+          "hmr": false
+        }
       }
     },
-    "launch": {
+    "serve": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cargo tauri dev",
+        "command": "pnpm tauri dev",
         "cwd": "apps/activity-tracker-desktop",
         "color": true
       }
     },
     "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "pnpm nx run activity-tracker-desktop:eslint",
+            "forwardAllArgs": false
+          },
+          {
+            "command": "pnpm nx run activity-tracker-desktop:check",
+            "forwardAllArgs": false
+          }
+        ],
+        "colors": true
+      }
+    },
+    "eslint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": [
         "{options.outputFile}"
@@ -63,14 +97,19 @@
     "check": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "svelte-check",
+        "command": "svelte-check --tsconfig ./tsconfig.app.json",
         "cwd": "apps/activity-tracker-desktop"
       }
     },
     "test": {
-      "executor": "@nxext/vitest:vitest",
+      "executor": "@nrwl/vite:test",
+      "outputs": [
+        "coverage/apps/activity-tracker-desktop"
+      ],
       "options": {
-        "vitestConfig": "apps/activity-tracker-desktop/vitest.config.ts"
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/activity-tracker-desktop",
+        "config": "vitest.config.ts"
       }
     }
   }

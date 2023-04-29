@@ -1,0 +1,9 @@
+{
+  "builders": {
+    "package": {
+      "implementation": "./docker-builder/impl",
+      "schema": "./docker-builder/schema.json",
+      "description": "build docker images for affected or specific apps"
+    }
+  }
+}

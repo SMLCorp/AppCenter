@@ -5,7 +5,7 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nx/vite:build",
+      "executor": "@nrwl/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
@@ -21,7 +21,7 @@
       }
     },
     "serve": {
-      "executor": "@nx/vite:dev-server",
+      "executor": "@nrwl/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "manga-reader-web:build"
@@ -38,7 +38,7 @@
       }
     },
     "preview": {
-      "executor": "@nx/vite:preview-server",
+      "executor": "@nrwl/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "manga-reader-web:build"
@@ -53,7 +53,7 @@
       }
     },
     "test": {
-      "executor": "@nx/vite:test",
+      "executor": "@nrwl/vite:test",
       "outputs": ["coverage/apps/manga-reader-web"],
       "options": {
         "passWithNoTests": true,
@@ -61,14 +61,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/manga-reader-web/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "serve-static": {
-      "executor": "@nx/web:file-server",
+      "executor": "@nrwl/web:file-server",
       "options": {
         "buildTarget": "manga-reader-web:build"
       }
