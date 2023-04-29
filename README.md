@@ -1,1 +1,1 @@
-# ActivityWatch
+# ActivityTracker
