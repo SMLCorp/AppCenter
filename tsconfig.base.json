@@ -1,0 +1,11 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "target": "es2015",
+    "allowJs": true,
+    "checkJs": true
+  },
+  "exclude": [ "node_modules", "dist" ]
+}
