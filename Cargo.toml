@@ -1,0 +1,4 @@
+[workspace]
+members = [
+  "apps/activity-tracker-desktop/src-tauri",
+]

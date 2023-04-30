@@ -5,7 +5,8 @@
     "rootDir": ".",
     "target": "es2015",
     "allowJs": true,
-    "checkJs": true
+    "checkJs": true,
+    "experimentalDecorators": true
   },
   "exclude": [ "node_modules", "dist" ]
 }

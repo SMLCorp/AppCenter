@@ -1,0 +1,64 @@
+{
+  "name": "activity-tracker-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/activity-tracker-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/activity-tracker-api",
+        "main": "apps/activity-tracker-api/src/main.ts",
+        "tsConfig": "apps/activity-tracker-api/tsconfig.app.json",
+        "assets": ["apps/activity-tracker-api/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/activity-tracker-api/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "activity-tracker-api:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "activity-tracker-api:build:development"
+        },
+        "production": {
+          "buildTarget": "activity-tracker-api:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/activity-tracker-api/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/activity-tracker-api/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
