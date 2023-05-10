@@ -1,6 +1,44 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
+  "extends": ["config:base", ":noUnscheduledUpdates"],
+  "schedule": ["every weekend"],
+  "semanticCommits": "enabled",
+  "rebaseWhen": "conflicted",
+  "rangeStrategy": "pin",
+  "packageRules": [
+    {
+      "groupName": "devDependencies (non-major)",
+      "depTypeList": ["devDependencies"],
+      "updateTypes": ["patch", "minor"],
+      "excludePackageNames": []
+    },
+    {
+      "groupName": "dependencies (non-major)",
+      "depTypeList": ["dependencies"],
+      "updateTypes": ["patch", "minor"],
+      "excludePackageNames": []
+    },
+    {
+      "groupName": "devDependencies & dependencies (major)",
+      "depTypeList": ["dependencies", "devDependencies"],
+      "updateTypes": ["major"]
+    },
+    {
+      "groupName": "definitelyTyped",
+      "packagePatterns": ["^@types/"],
+      "updateTypes": ["patch", "minor"]
+    },
+    {
+      "groupName": "Jest",
+      "matchPackagePatterns": [".*jest.*"]
+    },
+    {
+      "groupName": "lint packages",
+      "matchPackagePatterns": ["^eslint"]
+    },
+    {
+      "groupName": "builder packages",
+      "matchPackagePatterns": ["^@nrwl", "^@nx", ".*vite.*"]
+    }
   ]
 }
