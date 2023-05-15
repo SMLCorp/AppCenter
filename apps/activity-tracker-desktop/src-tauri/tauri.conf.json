@@ -1,9 +1,10 @@
 {
+  "$schema": "../../../node_modules/@tauri-apps/cli/schema.json",
   "build": {
-    "beforeBuildCommand": "nx run-many --target build --projects&#x3D;activity-tracker-desktop",
-    "beforeDevCommand": "nx run-many --target serve --projects&#x3D;activity-tracker-desktop",
-    "devPath": "http://127.0.0.1:5173/",
-    "distDir": "../../../dist/apps/activity-tracker-desktop"
+    "beforeBuildCommand": "cd ../../ && pnpm nx run activity-tracker-desktop:build-front",
+    "beforeDevCommand": "pnpm nx run activity-tracker-desktop:serve-front",
+    "devPath": "http://localhost:5173",
+    "distDir": "../../../dist/apps/activity-tracker-desktop/"
   },
   "package": {
     "productName": "activity-tracker-desktop",
@@ -28,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.appcenter.dev",
       "longDescription": "",
       "macOS": {
         "entitlements": null,

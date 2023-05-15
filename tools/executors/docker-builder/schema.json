@@ -1,0 +1,31 @@
+{
+  "cli": "nx",
+  "id": "docker-builder",
+  "type": "object",
+  "properties": {
+    "build": {
+      "type": "boolean",
+      "description": "Indicates if we build the project before docker image",
+      "default": true
+    },
+    "push": {
+      "type": "boolean",
+      "description": "Indicates if we push the docker image to registry",
+      "default": false
+    },
+    "registry": {
+      "type": "string",
+      "description": "Gitlab registry to push the docker image",
+      "default": "https://registry.gitlab.com/sonny.miel/app-center"
+    },
+    "tag": {
+      "type": "string",
+      "description": "Version to push to registry",
+      "default": "local"
+    }
+  },
+  "additionalProperties": false,
+  "required": []
+}
+
+

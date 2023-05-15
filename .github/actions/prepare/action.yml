@@ -1,0 +1,92 @@
+---
+name: Checkout repo and install dependencies
+description: "Prepare repository for next steps"
+
+inputs:
+  action-name:
+    required: true
+    description: "action name for cache"
+
+runs:
+  using: "composite"
+  steps:
+    - name: prepare cache key
+      shell: bash
+      run : |
+        echo "NODE_KEY=app-center-node-${{ hashFiles('pnpm-lock.yaml') }}" >> "$GITHUB_ENV"
+        echo "NX_KEY=app-center-${{ inputs.action-name }}" >> "$GITHUB_ENV"
+
+    - name: allow git actions
+      shell: bash
+      run: git config --global --add safe.directory /__w/AppCenter/AppCenter
+
+    - name: Restore node related cache
+      id: restore-node
+      uses: actions/cache/restore@v3
+      with:
+        path: |
+          ./.pnpm-store
+        key: ${{ env.NODE_KEY }}
+        restore-keys: |
+          app-center-node-
+
+    - name: Restore go related cache
+      uses: actions/cache/restore@v3
+      with:
+        path: |
+          ./go/pkg/mod
+        key: app-center-go-${{ hashFiles('go.mod') }}
+        restore-keys: |
+          app-center-go-
+
+    - name: Restore rust related cache
+      uses: actions/cache/restore@v3
+      with:
+        path: |
+          ./.cargo
+        key: app-center-rust-${{ hashFiles('Cargo.lock') }}
+        restore-keys: |
+          app-center-rust-
+
+    - name: Restore nx-related cache
+      id: restore-nx
+      uses: actions/cache/restore@v3
+      with:
+        path: |
+          ./node_modules/.cache
+        key: ${{ env.NX_KEY }}
+
+    - name: clear-nx
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        if ${{ steps.restore-nx.outputs.cache-hit == 'true' }}; then
+          gh actions-cache delete $NX_KEY --confirm
+        fi
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        pnpm config set store-dir .pnpm-store
+        pnpm install --frozen-lockfile
+
+    - name: clear-node
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        if ${{ steps.restore-node.outputs.cache-hit == 'true' }}; then
+          gh actions-cache delete $NODE_KEY --confirm
+        fi
+
+    - name: Save node related cache
+      uses: actions/cache/save@v3
+      if: success() || failure()
+      with:
+        path: |
+          ./.pnpm-store
+        key: ${{ env.NODE_KEY }}
+
+    - name: Derive appropriate SHAs for base and head for `nx affected` commands
+      uses: nrwl/nx-set-shas@v3

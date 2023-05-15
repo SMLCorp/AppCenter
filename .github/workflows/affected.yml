@@ -1,0 +1,59 @@
+---
+name: affected
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+concurrency:
+  group: ${{ github.ref_name }}
+  cancel-in-progress: true
+
+env:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: '/certs'
+  CARGO_HOME: '${{ github.workspace }}/.cargo/'
+  GOPATH: '${{ github.workspace }}/.go/'
+  VERSION: '${{ github.ref_name }}'
+  GIT_DEPTH: 0
+
+jobs:
+  affected:
+    runs-on: self-hosted
+    container: ghcr.io/smlcorp/app-center:latest
+    continue-on-error: false
+    strategy:
+      fail-fast: false
+      matrix:
+        action: [build, test, lint]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: ${{ env.GIT_DEPTH }}
+
+      - name: Prepare
+        uses: ./.github/actions/prepare
+        with:
+          action-name: ${{ matrix.action }}
+
+      - name: Execute affected actions
+        shell: bash
+        run: pnpm nx affected:${{ matrix.action }} --production --optimization --configuration=ci
+
+      - name: Save nx-related cache
+        uses: actions/cache/save@v3
+        if: success() || failure()
+        with:
+          path: |
+            ./node_modules/.cache
+          key: app-center-${{ matrix.action }}
+
+      - name: package affected
+        if: matrix.action == 'build'
+        shell: bash
+        run: pnpm affected:package --build=false --push --tag=${{ env.VERSION }}
+
+

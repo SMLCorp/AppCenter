@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: "activity-tracker-api",
   preset: "../../jest.preset.js",

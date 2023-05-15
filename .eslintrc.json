@@ -189,7 +189,7 @@
       {
         "enforceBuildableLibDependency": true,
         "allowCircularSelfDependency": true,
-        "allow": [],
+        "allow": [ ],
         "depConstraints": [
           {
             "sourceTag": "*",

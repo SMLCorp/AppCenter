@@ -8,5 +8,10 @@
   "singleAttributePerLine": false,
   "singleQuote": false,
   "tabWidth": 2,
-  "trailingComma": "all"
+  "trailingComma": "all",
+
+  "svelteStrictMode": true,
+  "plugins": [
+    "prettier-plugin-svelte"
+  ]
 }
