@@ -23,10 +23,8 @@
       }
     },
     "build-front": {
-      "executor": "@nrwl/vite:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/activity-tracker-desktop",
         "assets": [
@@ -43,7 +41,7 @@
       }
     },
     "serve-front": {
-      "executor": "@nrwl/vite:dev-server",
+      "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "activity-tracker-desktop:build-front"
@@ -84,10 +82,8 @@
       }
     },
     "eslint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "apps/activity-tracker-desktop/**/*.{ts,svelte,spec.ts}"
@@ -102,10 +98,8 @@
       }
     },
     "test": {
-      "executor": "@nrwl/vite:test",
-      "outputs": [
-        "coverage/apps/activity-tracker-desktop"
-      ],
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/apps/activity-tracker-desktop"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/activity-tracker-desktop",
