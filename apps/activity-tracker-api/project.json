@@ -1,62 +1,60 @@
 {
   "name": "activity-tracker-api",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/activity-tracker-api/src",
+  "sourceRoot": "apps/activity-tracker-api",
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nx/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
+      "executor": "nx:run-commands",
       "options": {
-        "target": "node",
-        "compiler": "tsc",
-        "outputPath": "dist/apps/activity-tracker-api",
-        "main": "apps/activity-tracker-api/src/main.ts",
-        "tsConfig": "apps/activity-tracker-api/tsconfig.app.json",
-        "assets": ["apps/activity-tracker-api/src/assets"],
-        "isolatedConfig": true,
-        "webpackConfig": "apps/activity-tracker-api/webpack.config.js"
+        "cwd": "apps/activity-tracker-api",
+        "commands": [
+          {
+            "command": "node ace build --production --tsconfig tsconfig.app.json",
+            "forwardAllArgs": false
+          }
+        ],
+        "colors": true
       },
       "configurations": {
-        "development": {},
         "production": {}
       }
     },
     "serve": {
-      "executor": "@nx/js:node",
-      "defaultConfiguration": "development",
+      "executor": "nx:run-commands",
       "options": {
-        "buildTarget": "activity-tracker-api:build"
+        "cwd": "apps/activity-tracker-api",
+        "commands": [
+          {
+            "command": "node ace serve --watch"
+          }
+        ],
+        "colors": true
       },
       "configurations": {
-        "development": {
-          "buildTarget": "activity-tracker-api:build:development"
-        },
-        "production": {
-          "buildTarget": "activity-tracker-api:build:production"
-        }
+        "production": {}
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/activity-tracker-api",
+        "commands": [
+          {
+            "command": "node ace test"
+          }
+        ],
+        "colors": true
+      },
+      "configurations": {
+        "production": {}
       }
     },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/activity-tracker-api/**/*.ts"]
-      }
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "apps/activity-tracker-api/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "lintFilePatterns": ["apps/activity-tracker-api/**/*.{ts,js}"]
       }
     }
   },
