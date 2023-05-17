@@ -1,14 +1,8 @@
-/**
- * Contract source: https://git.io/Jfefs
- *
- * Feel free to let us know via PR, if you find something broken in this contract
- * file.
- */
-
+/* eslint-disable @typescript-eslint/no-empty-interface */
 import type { InferListFromConfig } from "@adonisjs/core/build/config";
 
 import type hashConfig from "../config/hash";
 
 declare module "@ioc:Adonis/Core/Hash" {
-  type HashersList = InferListFromConfig<typeof hashConfig>;
+  interface HashersList extends InferListFromConfig<typeof hashConfig> {}
 }

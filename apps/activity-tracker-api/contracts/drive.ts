@@ -1,14 +1,8 @@
-/**
- * Contract source: https://git.io/JBt3I
- *
- * Feel free to let us know via PR, if you find something broken in this contract
- * file.
- */
-
+/* eslint-disable @typescript-eslint/no-empty-interface */
 import type { InferDisksFromConfig } from "@adonisjs/core/build/config";
 
 import type driveConfig from "../config/drive";
 
 declare module "@ioc:Adonis/Core/Drive" {
-  type DisksList = InferDisksFromConfig<typeof driveConfig>;
+  interface DisksList extends InferDisksFromConfig<typeof driveConfig> {}
 }
