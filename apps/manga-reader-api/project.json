@@ -29,5 +29,8 @@
       "executor": "@nx-go/nx-go:lint"
     }
   },
-  "tags": []
+  "tags": [],
+  "namedInputs": {
+    "projectSpecificFiles": ["{workspaceRoot}/go.mod"]
+  }
 }

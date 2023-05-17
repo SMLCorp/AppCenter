@@ -1,5 +1,5 @@
-import { ExecutorContext } from '@nrwl/devkit';
-import * as childProcess from 'child_process';
+import { ExecutorContext } from "@nrwl/devkit";
+import * as childProcess from "child_process";
 
 interface Options {
   build: boolean;
@@ -12,16 +12,11 @@ const packager = async (
   options: Options,
   context: ExecutorContext,
 ): Promise<{ success: boolean; error?: Error }> => {
-  const {
-    build: shouldBuild,
-    push: shouldPush,
-    registry,
-    tag,
-  } = options;
+  const { build: shouldBuild, push: shouldPush, registry, tag } = options;
   const { root, projectName } = context;
 
   if (!projectName) {
-    return { success: false, error: new Error('Project name undefined')};
+    return { success: false, error: new Error("Project name undefined") };
   }
 
   const projectRoot = `${root}/apps/${projectName}`;
@@ -41,10 +36,7 @@ const packager = async (
   ]);
 
   // Copy pnpm-lock.yaml to app folder
-  commands.push([
-    `cp -Rf pnpm-lock.yaml ${projectRoot}/`,
-    { cwd: root },
-  ]);
+  commands.push([`cp -Rf pnpm-lock.yaml ${projectRoot}/`, { cwd: root }]);
 
   // Build and tag image for given app
   commands.push([
@@ -60,16 +52,13 @@ const packager = async (
   }
   // We clean up the dist folder from appname
   if (shouldBuild) {
-    commands.push([
-      `rm -rf ${projectRoot}/dist`,
-      { cwd: root },
-    ]);
+    commands.push([`rm -rf ${projectRoot}/dist`, { cwd: root }]);
   }
 
   let error: Error;
   try {
     commands.forEach((command) => {
-      childProcess.execSync(command[0], { ...command[1], stdio: 'inherit' });
+      childProcess.execSync(command[0], { ...command[1], stdio: "inherit" });
     });
   } catch (err) {
     error = err;
@@ -77,10 +66,11 @@ const packager = async (
   }
 
   return new Promise((resolve) => {
-    resolve({ success: error === undefined, error: error ? new Error(error.message) : undefined });
+    resolve({
+      success: error === undefined,
+      error: error ? new Error(error.message) : undefined,
+    });
   });
 };
 
 export default packager;
-
-

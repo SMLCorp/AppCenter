@@ -7,16 +7,13 @@ export default defineConfig({
   server: {
     strictPort: true,
     fs: {
-      allow: [
-        './',
-        'node_modules/vite'
-      ],
-    }
+      allow: ["./", "node_modules/vite"],
+    },
   },
   envPrefix: ["VITE_", "TAURI_"],
   build: {
-    target: process.env.TAURI_PLATFORM == 'windows' ? 'chrome105' : 'safari13',
-    minify: !process.env.TAURI_DEBUG ? 'esbuild' : false,
+    target: process.env.TAURI_PLATFORM == "windows" ? "chrome105" : "safari13",
+    minify: !process.env.TAURI_DEBUG ? "esbuild" : false,
     sourcemap: !!process.env.TAURI_DEBUG,
   },
   plugins: [svelte()],

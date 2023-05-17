@@ -13,10 +13,10 @@ concurrency:
 
 env:
   DOCKER_DRIVER: overlay2
-  DOCKER_TLS_CERTDIR: '/certs'
-  CARGO_HOME: '${{ github.workspace }}/.cargo/'
-  GOPATH: '${{ github.workspace }}/.go/'
-  VERSION: '${{ github.ref_name }}'
+  DOCKER_TLS_CERTDIR: "/certs"
+  CARGO_HOME: "${{ github.workspace }}/.cargo/"
+  GOPATH: "${{ github.workspace }}/.go/"
+  VERSION: "${{ github.ref_name }}"
   GIT_DEPTH: 0
 
 jobs:
@@ -55,5 +55,3 @@ jobs:
         if: matrix.action == 'build'
         shell: bash
         run: pnpm affected:package --build=false --push --tag=${{ env.VERSION }}
-
-

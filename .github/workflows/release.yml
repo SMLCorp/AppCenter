@@ -4,7 +4,7 @@ name: release
 on:
   push:
     tags:
-      - '*@*'
+      - "*@*"
 
 concurrency:
   group: ${{ github.ref_name }}
@@ -12,9 +12,9 @@ concurrency:
 
 env:
   DOCKER_DRIVER: overlay2
-  DOCKER_TLS_CERTDIR: '/certs'
-  CARGO_HOME: '${{ github.workspace }}/.cargo/'
-  GOPATH: '${{ github.workspace }}/.go/'
+  DOCKER_TLS_CERTDIR: "/certs"
+  CARGO_HOME: "${{ github.workspace }}/.cargo/"
+  GOPATH: "${{ github.workspace }}/.go/"
   GIT_DEPTH: 0
 
 jobs:
@@ -45,4 +45,3 @@ jobs:
       - name: package
         shell: bash
         run: pnpm nx run ${{env.APP}}:package --build=false --push --tag=${{ env.VERSION }} --skip-nx-cache
-

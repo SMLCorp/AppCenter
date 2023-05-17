@@ -16,9 +16,7 @@
     "moduleResolution": "node",
     "importsNotUsedAsValues": "error",
     "sourceMap": true,
-    "types": [
-      "svelte"
-    ],
+    "types": ["svelte"],
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
