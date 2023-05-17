@@ -12,7 +12,7 @@ runs:
   steps:
     - name: prepare cache key
       shell: bash
-      run : |
+      run: |
         echo "NODE_KEY=app-center-node-${{ hashFiles('pnpm-lock.yaml') }}" >> "$GITHUB_ENV"
         echo "NX_KEY=app-center-${{ inputs.action-name }}" >> "$GITHUB_ENV"
 

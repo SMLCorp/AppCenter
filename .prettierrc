@@ -11,7 +11,5 @@
   "trailingComma": "all",
 
   "svelteStrictMode": true,
-  "plugins": [
-    "prettier-plugin-svelte"
-  ]
+  "plugins": ["prettier-plugin-svelte"]
 }

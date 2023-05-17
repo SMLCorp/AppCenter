@@ -3,9 +3,6 @@
   "compilerOptions": {
     "outDir": "../../dist/apps/activity-tracker-api/"
   },
-  "exclude": [
-    "./**/*.spec.*",
-    "./**/*.test.*"
-  ],
+  "exclude": ["./**/*.spec.*", "./**/*.test.*"],
   "include": ["./**/*.js", "./**/*.ts"]
 }
