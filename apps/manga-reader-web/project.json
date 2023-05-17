@@ -54,7 +54,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/manga-reader-web"],
+      "outputs": ["{workspaceRoot}/coverage/apps/manga-reader-web"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/manga-reader-web"

@@ -99,12 +99,15 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/activity-tracker-desktop"],
+      "outputs": ["{workspaceRoot}/coverage/apps/activity-tracker-desktop"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/activity-tracker-desktop",
         "config": "vitest.config.ts"
       }
     }
+  },
+  "namedInputs": {
+    "projectSpecificFiles": ["{workspaceRoot}/cargo.toml"]
   }
 }
