@@ -5,7 +5,7 @@
     "@adonisjs/core/build/commands/index.js",
     "@adonisjs/repl/build/commands"
   ],
-  "exceptionHandlerNamespace": "App/Exceptions/Handler",
+  "exceptionHandlerNamespace": "App/Exceptions/handler",
   "aliases": {
     "App": "app",
     "Config": "config",
@@ -13,7 +13,7 @@
     "Contracts": "contracts"
   },
   "preloads": ["./start/routes", "./start/kernel"],
-  "providers": ["./providers/AppProvider", "@adonisjs/core"],
+  "providers": ["./providers/app-provider", "@adonisjs/core"],
   "aceProviders": ["@adonisjs/repl"],
   "tests": {
     "suites": [

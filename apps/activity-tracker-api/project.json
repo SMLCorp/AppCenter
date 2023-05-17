@@ -41,7 +41,8 @@
         "cwd": "apps/activity-tracker-api",
         "commands": [
           {
-            "command": "node ace test"
+            "command": "node ace test",
+            "forwardAllArgs": false
           }
         ],
         "colors": true

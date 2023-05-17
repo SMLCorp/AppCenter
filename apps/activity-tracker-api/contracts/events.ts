@@ -1,11 +1,6 @@
-/**
- * Contract source: https://git.io/JfefG
- *
- * Feel free to let us know via PR, if you find something broken in this contract
- * file.
- */
+/* eslint-disable @typescript-eslint/no-empty-interface */
 
-declare module '@ioc:Adonis/Core/Event' {
+declare module "@ioc:Adonis/Core/Event" {
   /*
   |--------------------------------------------------------------------------
   | Define typed events

@@ -13,11 +13,12 @@
 |
 */
 
-import Logger from '@ioc:Adonis/Core/Logger';
-import HttpExceptionHandler from '@ioc:Adonis/Core/HttpExceptionHandler';
+import HttpExceptionHandler from "@ioc:Adonis/Core/HttpExceptionHandler";
+import Logger from "@ioc:Adonis/Core/Logger";
 
+// eslint-disable-next-line import/no-default-export
 export default class ExceptionHandler extends HttpExceptionHandler {
-  constructor() {
-    super(Logger)
+  public constructor() {
+    super(Logger);
   }
 }

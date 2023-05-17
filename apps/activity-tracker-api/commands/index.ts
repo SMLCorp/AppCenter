@@ -1,5 +1,6 @@
-import { listDirectoryFiles } from '@adonisjs/core/build/standalone'
-import Application from '@ioc:Adonis/Core/Application'
+/* eslint-disable import/no-default-export */
+import { listDirectoryFiles } from "@adonisjs/core/build/standalone";
+import Application from "@ioc:Adonis/Core/Application";
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,7 @@ import Application from '@ioc:Adonis/Core/Application'
 | 2. We must ignore this file to avoid getting into an infinite loop
 |
 */
-export default listDirectoryFiles(__dirname, Application.appRoot, ['./commands/index'])
+// eslint-disable-next-line unicorn/prefer-module
+export default listDirectoryFiles(__dirname, Application.appRoot, [
+  "./commands/index",
+]);
