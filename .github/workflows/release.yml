@@ -19,7 +19,7 @@ env:
 
 jobs:
   affected:
-    runs-on: self-hosted
+    runs-on: ubuntu-20.04
     container: ghcr.io/smlcorp/app-center:latest
     steps:
       - name: Checkout
