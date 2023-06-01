@@ -22,6 +22,8 @@ runs:
 
     - name: install gh-actions-cache
       shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
       run: gh extension install actions/gh-actions-cache
 
     - name: Restore node related cache
