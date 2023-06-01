@@ -20,6 +20,10 @@ runs:
       shell: bash
       run: git config --global --add safe.directory /__w/AppCenter/AppCenter
 
+    - name: install gh-actions-cache
+      shell: bash
+      run: gh extension install actions/gh-actions-cache
+
     - name: Restore node related cache
       id: restore-node
       uses: actions/cache/restore@v3
