@@ -64,6 +64,7 @@ runs:
 
     - name: clear-nx
       shell: bash
+      continue-on-error: true
       env:
         GH_TOKEN: ${{ github.token }}
       run: |
@@ -79,6 +80,7 @@ runs:
 
     - name: clear-node
       shell: bash
+      continue-on-error: true
       env:
         GH_TOKEN: ${{ github.token }}
       run: |
