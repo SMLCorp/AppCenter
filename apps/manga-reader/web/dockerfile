@@ -1,0 +1,27 @@
+# Use an official Node.js runtime as the base image
+FROM node:18.16
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Install pnpm globally
+RUN npm install -g pnpm@8.5.1
+
+# Copy the package.json and pnpm-lock.yaml files to the working directory
+COPY package.json pnpm-lock.yaml ./
+
+# Install the project dependencies
+RUN pnpm install
+
+# Copy the entire application to the working directory
+COPY . .
+
+# Build the React application
+RUN pnpm run build
+
+# Expose the port that the server will listen on
+EXPOSE 3000
+
+# Start the server
+CMD ["pnpm", "run", "dev"]
+

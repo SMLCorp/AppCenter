@@ -2,7 +2,6 @@
   "affected": {
     "defaultBase": "main"
   },
-  "npmScope": "app-center",
   "namedInputs": {
     "default": [
       "{projectRoot}/**/*",
@@ -60,23 +59,6 @@
           "test",
           "e2e"
         ]
-      }
-    }
-  },
-  "generators": {
-    "@nx/react": {
-      "application": {
-        "style": "scss",
-        "linter": "eslint",
-        "bundler": "vite",
-        "babel": true
-      },
-      "component": {
-        "style": "scss"
-      },
-      "library": {
-        "style": "scss",
-        "linter": "eslint"
       }
     }
   },

@@ -1,8 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "outDir": "../../dist/apps/activity-tracker-api/"
-  },
-  "exclude": ["./**/*.spec.*", "./**/*.test.*"],
-  "include": ["./**/*.js", "./**/*.ts"]
-}

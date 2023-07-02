@@ -1,8 +1,0 @@
-{
-  "extends": ["plugin:adonis/typescriptApp", "../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*", "env.d.ts", "env.ts", "test.ts", "server.ts"],
-  "rules": {
-    "prettier/prettier": ["error"]
-  },
-  "overrides": []
-}
