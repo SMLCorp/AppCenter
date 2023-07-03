@@ -41,7 +41,7 @@ jobs:
 
       - name: Execute affected actions
         shell: bash
-        run: pnpm nx affected:${{ matrix.action }} --production --optimization --configuration=ci
+        run: pnpm nx affected:${{ matrix.action }}
 
       - name: Save nx-related cache
         uses: actions/cache/save@v3
@@ -51,7 +51,7 @@ jobs:
             ./node_modules/.cache
           key: app-center-${{ matrix.action }}
 
-      - name: package affected
-        if: matrix.action == 'build'
-        shell: bash
-        run: pnpm affected:package --build=false --push --tag=${{ env.VERSION }}
+      # - name: package affected
+      #   if: matrix.action == 'build'
+      #   shell: bash
+      #   run: pnpm affected:package --build=false --push --tag=${{ env.VERSION }}
