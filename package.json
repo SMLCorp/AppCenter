@@ -2,7 +2,7 @@
   "name": "app-center",
   "version": "0.0.0",
   "license": "",
-  "packageManager": "pnpm@8.5.1",
+  "packageManager": "pnpm@8.6.6",
   "scripts": {
     "prepare": "panda codegen",
     "affected:package": "nx affected --target=package"
