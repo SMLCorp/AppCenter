@@ -17,14 +17,14 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@nx/eslint-plugin": "16.4.2",
+    "@nx/eslint-plugin": "16.5.0",
     "@pandacss/dev": "0.5.0",
     "@types/node": "18.11.9",
     "@types/react": "18.0.37",
     "@types/react-dom": "18.0.11",
     "@typescript-eslint/eslint-plugin": "5.59.0",
     "@typescript-eslint/parser": "5.59.0",
-    "@vitejs/plugin-react": "4.0.0",
+    "@vitejs/plugin-react": "4.0.2",
     "eslint": "8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
@@ -37,6 +37,6 @@
     "eslint-plugin-unicorn": "47.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "typescript": "5.0.2",
-    "vite": "4.3.9"
+    "vite": "4.4.2"
   }
 }
