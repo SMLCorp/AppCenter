@@ -74,11 +74,11 @@ importers:
   apps/manga-reader/web:
     dependencies:
       '@tanstack/router':
-        specifier: 0.0.1-beta.89
-        version: 0.0.1-beta.89(react-dom@18.2.0)(react@18.2.0)
+        specifier: 0.0.1-beta.99
+        version: 0.0.1-beta.99(react-dom@18.2.0)(react@18.2.0)
       '@tanstack/router-devtools':
-        specifier: 0.0.1-beta.89
-        version: 0.0.1-beta.89(react-dom@18.2.0)(react@18.2.0)
+        specifier: 0.0.1-beta.99
+        version: 0.0.1-beta.99(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -2614,50 +2614,50 @@ packages:
       tslib: 2.6.0
     dev: true
 
-  /@tanstack/react-store@0.0.1-beta.89(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-cSUKpB9acuvuVcrqDMddz/dRYCrt/gxefckX0C30hTTnwhonX+kcFXvhbazAROsJT1ZkBAJmJFvjXy8TLFQdUw==}
+  /@tanstack/react-store@0.0.1-beta.90(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-JoTVt7h1agu6DhFwB3VKbxzW55oAls+A4gK6JHp1WptSWuAYOoY6ZhBcLhZjb5hEAJOQh/CwbPVrjUU0rSVo6g==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
-      '@tanstack/store': 0.0.1-beta.89
+      '@tanstack/store': 0.0.1-beta.90
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
-  /@tanstack/router-devtools@0.0.1-beta.89(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-b7YneX+wa0Ln/DAkQtPN2iDXzizbjPfZU+ywnTwDK0LAU915UmU8bQpVZ/z6aRUSW+2LZr+/VS2fth1LnP++wg==}
+  /@tanstack/router-devtools@0.0.1-beta.99(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-I7pyxZoeT5gO4vmbwzGXW9OCirouMUhwus+Q2JGoBue2UibBswoa0WsK3DCNwrj1SP0PHJmeVu5pu0Um45rsxQ==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
       '@babel/runtime': 7.22.5
-      '@tanstack/router': 0.0.1-beta.89(react-dom@18.2.0)(react@18.2.0)
+      '@tanstack/router': 0.0.1-beta.99(react-dom@18.2.0)(react@18.2.0)
       date-fns: 2.30.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@tanstack/router@0.0.1-beta.89(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-HSQshMk1+keZ/veRKW5BzE3xXBG/Cdhxuu3D4FiVft71Q9Io++PyokGxcFmjSgmMmM070lQaIAY36CfKAesQgQ==}
+  /@tanstack/router@0.0.1-beta.99(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-nCS9OFNS3m5RlhIkNOUmMRIVPOIwaxm+XX9erAsRKHuOOT8shtZMC+fewiTHd6uvW89mEaEAlz/5BdgW19U+CQ==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
       '@babel/runtime': 7.22.5
-      '@tanstack/react-store': 0.0.1-beta.89(react-dom@18.2.0)(react@18.2.0)
+      '@tanstack/react-store': 0.0.1-beta.90(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       tiny-invariant: 1.3.1
       tiny-warning: 1.0.3
     dev: false
 
-  /@tanstack/store@0.0.1-beta.89:
-    resolution: {integrity: sha512-YW2aAhsXI4QYLXRnxZzB7MgEah91itQcWAjN3GYg1HKHxPv/11T5bL1CUCSxFLTI0f+45uNRjsmof6eqsN3ECA==}
+  /@tanstack/store@0.0.1-beta.90:
+    resolution: {integrity: sha512-L7ub4yiqdsANkGWOmpdY4kEkFge+v/aNeG3rGVQs68FyHr1Q5kaYKsbf+vzWBeYYc4Fo6uLMfh/uCf3C7eGhRw==}
     engines: {node: '>=12'}
     dev: false
 
