@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 COPY --from=golang:1.20.4-bullseye /usr/local/go/ /usr/local/go/
 ENV PATH="$PATH:/usr/local/go/bin"
 
-COPY --from=node:18.16.0-bullseye-slim /usr/local/ /usr/local/
+COPY --from=node:18.17.1-bullseye-slim /usr/local/ /usr/local/
 ENV PATH="$PATH:/usr/local/lib/node_modules/.bin"
 RUN npm install -g pnpm@7.32.2
 
