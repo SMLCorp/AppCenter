@@ -1,5 +1,8 @@
-import { Outlet, RootRoute } from "@tanstack/router";
-import React from "react";
+/* eslint-disable unicorn/no-null */
+import { Outlet, RootRoute } from "@tanstack/react-router";
+import React, { Suspense } from "react";
+
+import { Menu } from "../components/menu";
 
 // eslint-disable-next-line react-refresh/only-export-components
 const TanStackRouterDevtools = import.meta.env.PROD
@@ -11,15 +14,14 @@ const TanStackRouterDevtools = import.meta.env.PROD
       })),
     );
 
-
-
 export const rootRoute = new RootRoute({
   component: () => (
     <>
-      <Outlet />
-      <TanStackRouterDevtools />
+      <Suspense fallback={<>Loading... </>}>
+        <Outlet />
+        <TanStackRouterDevtools />
+      </Suspense>
+      <Menu />
     </>
   ),
 });
-
-

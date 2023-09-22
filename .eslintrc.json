@@ -58,10 +58,16 @@
     "simple-import-sort/exports": "error",
     "simple-import-sort/imports": "error",
     "unused-imports/no-unused-imports": "error",
-    "unicorn/no-array-callback-reference": "off",
+    "unicorn/no-array-callback-reference": "error",
     "unicorn/no-array-for-each": "off",
     "unicorn/no-array-reduce": "off",
-    "unicorn/no-null": "off",
+    "unicorn/no-null": "error",
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "checkFilenames": false
+      }
+    ],
     "@typescript-eslint/member-ordering": "error",
     "@typescript-eslint/method-signature-style": "error",
     "@typescript-eslint/naming-convention": [
