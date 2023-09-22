@@ -11,8 +11,8 @@
     "package": "docker build . -t ghcr.io/smlcorp/manga-reader:latest --push"
   },
   "dependencies": {
-    "@tanstack/router": "0.0.1-beta.89",
-    "@tanstack/router-devtools": "0.0.1-beta.89",
+    "@tanstack/react-router": "0.0.1-beta.191",
+    "@tanstack/router-devtools": "0.0.1-beta.191",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
