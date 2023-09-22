@@ -1,15 +1,21 @@
 import { Fragment } from "react";
 
-export interface IChapter {
+interface IChapter {
   count: number;
-  handleClick: Function;
+  handleClick: (chapter: number) => void;
 }
 
-const Chapter = ({ count, handleClick }: IChapter): JSX.Element => <Fragment>
-  <div onClick={() => handleClick(count)}>
-    <span>Chapter n° ${count}</span>
-  </div>
-</Fragment>
+const Chapter = ({ count, handleClick }: IChapter): JSX.Element => (
+  <Fragment>
+    <div
+      onClick={() => {
+        handleClick(count);
+      }}
+    >
+      <span>Chapter n° ${count}</span>
+    </div>
+  </Fragment>
+);
 
 export interface IChaptersListProperties {
   mangaId: string;
@@ -18,21 +24,16 @@ export interface IChaptersListProperties {
 
 export const ChaptersList = ({
   mangaId,
-  total,
 }: IChaptersListProperties): JSX.Element => {
-  const handleClick = ({ chapter }: { chapter: number }): void => {
-    window.location.replace(`/reader/${mangaId}/chapter/${chapter}`);
+  const handleClick = (chapterNumber: number): void => {
+    window.location.replace(`/reader/${mangaId}/chapter/${chapterNumber}`);
   };
 
   return (
     <Fragment>
       <div>
         <ul>
-          {{
-            for(let count = 0; count<total; count++) {
-             <Chapter count={count} handleClick={handleClick} />
-          }
-          }}
+          <Chapter count={0} handleClick={handleClick} />
         </ul>
       </div>
     </Fragment>

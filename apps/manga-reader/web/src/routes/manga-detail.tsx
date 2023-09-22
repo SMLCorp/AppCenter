@@ -3,7 +3,8 @@ import { Fragment } from "react";
 import { MangaInfo } from "../components/info";
 
 export const MangaDetail = (): JSX.Element => {
-  const manga: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const manga: any = { cover: undefined, title: undefined };
 
   return (
     <Fragment>
