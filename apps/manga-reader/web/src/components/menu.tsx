@@ -5,7 +5,6 @@ import { Link } from "@tanstack/react-router";
 import {
   Album,
   BadgeAlert,
-  Blocks,
   Compass,
   History,
   MoreHorizontal,
@@ -68,14 +67,6 @@ export const Menu = (): JSX.Element => (
         </Link>
       </MenuButton>
     </li>
-    {/* <li> */}
-    {/*   <MenuButton> */}
-    {/*     <Link to="/extensions"> */}
-    {/*       <Blocks /> */}
-    {/*       Extensions */}
-    {/*     </Link> */}
-    {/*   </MenuButton> */}
-    {/* </li> */}
     <li>
       <MenuButton>
         <Link to="/browse">
