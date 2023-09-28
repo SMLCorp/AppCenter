@@ -26,6 +26,12 @@ const libraryRoute = new Route({
   component: lazyRouteComponent(async () => import("../pages/library")),
 });
 
+const historyRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: "history",
+  component: lazyRouteComponent(async () => import("../pages/history")),
+});
+
 const indexRoute = new Route({
   getParentRoute: () => rootRoute,
   path: "/",
@@ -45,13 +51,14 @@ const notFoundRoute = new Route({
 });
 
 const routeTree = rootRoute.addChildren([
-  indexRoute,
-  libraryRoute,
   browseRoute,
   extensionsRoute,
+  historyRoute,
+  indexRoute,
+  libraryRoute,
+  notFoundRoute,
   settingsRoute,
   updatesRoute,
-  notFoundRoute,
 ]);
 
 // Register your router for maximum type safety
@@ -66,6 +73,7 @@ export const router = new Router({ routeTree });
 export {
   browseRoute,
   extensionsRoute,
+  historyRoute,
   indexRoute,
   libraryRoute,
   notFoundRoute,
