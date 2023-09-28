@@ -182,13 +182,20 @@
     "@nx/enforce-module-boundaries": [
       "error",
       {
-        "enforceBuildableLibDependency": true,
         "allowCircularSelfDependency": true,
         "allow": [ ],
         "depConstraints": [
           {
-            "sourceTag": "*",
-            "onlyDependOnLibsWithTags": [ "*" ]
+            "sourceTag": "scope:shared",
+            "onlyDependOnLibsWithTags": ["scope:shared"]
+          },
+          {
+            "sourceTag": "scope:web",
+            "onlyDependOnLibsWithTags": ["scope:web", "scope:shared"]
+          },
+          {
+            "sourceTag": "scope:api",
+            "onlyDependOnLibsWithTags": ["scope:api", "scope:shared"]
           }
         ]
       }

@@ -3,7 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "nx": {
+    "tags": [
+      "scope:web"
+    ]
+  },
   "scripts": {
+    "prepare": "panda codegen",
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -11,14 +17,17 @@
     "package": "docker build . -t ghcr.io/smlcorp/manga-reader:latest --push"
   },
   "dependencies": {
+    "@SMLCorp/shadow-panda": "workspace:^",
     "@tanstack/react-router": "0.0.1-beta.191",
     "@tanstack/router-devtools": "0.0.1-beta.191",
+    "lucide-react": "^0.279.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@nx/eslint-plugin": "16.4.2",
-    "@pandacss/dev": "0.5.0",
+    "@pandacss/dev": "0.15.1",
+    "@pandacss/preset-panda": "0.15.1",
     "@types/node": "18.11.9",
     "@types/react": "18.0.37",
     "@types/react-dom": "18.0.11",
