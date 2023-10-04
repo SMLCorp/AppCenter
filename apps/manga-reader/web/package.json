@@ -20,7 +20,7 @@
     "@SMLCorp/shadow-panda": "workspace:^",
     "@tanstack/react-router": "0.0.1-beta.191",
     "@tanstack/router-devtools": "0.0.1-beta.191",
-    "lucide-react": "^0.279.0",
+    "lucide-react": "0.279.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
