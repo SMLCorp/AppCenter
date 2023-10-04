@@ -10,7 +10,7 @@ ENV PATH="$PATH:/usr/local/go/bin"
 
 COPY --from=node:20.6.1-bullseye-slim /usr/local/ /usr/local/
 ENV PATH="$PATH:/usr/local/lib/node_modules/.bin"
-RUN npm install -g pnpm@7.32.2
+RUN npm install -g pnpm@8.8.0
 
 #RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 COPY --from=rust:1.72-slim-bullseye /usr/local/ /usr/local/
