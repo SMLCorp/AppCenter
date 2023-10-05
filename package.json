@@ -18,7 +18,7 @@
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-only-error": "1.0.2",
-    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-prettier": "5.0.0",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-react-refresh": "0.4.3",
     "eslint-plugin-simple-import-sort": "10.0.0",
@@ -32,8 +32,5 @@
     "typescript": "5.0.2",
     "vite": "4.3.9",
     "vite-plugin-ssr": "0.4.132"
-  },
-  "dependencies": {
-    "@ark-ui/react": "0.15.0"
   }
 }
