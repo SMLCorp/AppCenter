@@ -29,7 +29,6 @@
     "strict": true,
     "strictNullChecks": true,
     "target": "ESNext",
-    "types": ["node"],
     "typeRoots": ["node_modules/@types"],
     "useUnknownInCatchVariables": true
   },

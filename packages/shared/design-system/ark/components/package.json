@@ -32,9 +32,9 @@
     "@park-ui/presets": "0.16.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.15.1",
-    "@pandacss/preset-panda": "0.3.2",
-    "@pandacss/types": "0.15.1",
+    "@pandacss/dev": "0.15.5",
+    "@pandacss/preset-panda": "0.15.5",
+    "@pandacss/types": "0.15.5",
     "@shadow-panda/preset": "0.7.0",
     "@types/react": "18.2.25",
     "@types/react-dom": "18.2.10",
