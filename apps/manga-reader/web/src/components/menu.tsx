@@ -10,7 +10,7 @@ import {
   MoreHorizontal,
 } from "lucide-react";
 
-import { libraryRoute } from "../routes/rooter";
+import { libraryRoute } from "../routes/routes";
 
 const MenuButton = ({
   children,
@@ -35,15 +35,20 @@ const MenuButton = ({
 export const Menu = (): JSX.Element => (
   <ul
     className={flex({
-      backgroundColor: "red",
+      backgroundColor: "blue.300",
       position: "sticky",
       bottom: "0",
       direction: "row",
       justify: "space-evenly",
       align: "center",
+      height: "100%",
     })}
   >
-    <li>
+    <li
+      className={css({
+        width: "18%",
+      })}
+    >
       <MenuButton>
         <Link to={libraryRoute.to}>
           <Album />
@@ -51,7 +56,11 @@ export const Menu = (): JSX.Element => (
         </Link>
       </MenuButton>
     </li>
-    <li>
+    <li
+      className={css({
+        width: "18%",
+      })}
+    >
       <MenuButton>
         <Link to="/updates">
           <BadgeAlert />
@@ -59,7 +68,11 @@ export const Menu = (): JSX.Element => (
         </Link>
       </MenuButton>
     </li>
-    <li>
+    <li
+      className={css({
+        width: "18%",
+      })}
+    >
       <MenuButton>
         <Link to="/history">
           <History />
@@ -67,7 +80,11 @@ export const Menu = (): JSX.Element => (
         </Link>
       </MenuButton>
     </li>
-    <li>
+    <li
+      className={css({
+        width: "18%",
+      })}
+    >
       <MenuButton>
         <Link to="/browse">
           <Compass />
@@ -75,7 +92,11 @@ export const Menu = (): JSX.Element => (
         </Link>
       </MenuButton>
     </li>
-    <li>
+    <li
+      className={css({
+        width: "18%",
+      })}
+    >
       <MenuButton>
         <Link to="/settings">
           <MoreHorizontal />
