@@ -3,7 +3,6 @@ import { css } from "@SMLCorp/styled-system/css";
 
 import { loginRoute, signupRoute } from "../routes/routes";
 
-
 const SignUp = (): JSX.Element => (
   <div
     className={css({

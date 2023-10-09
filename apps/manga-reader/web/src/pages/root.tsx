@@ -2,7 +2,6 @@
 import { Outlet } from "@tanstack/react-router";
 import React, { Suspense } from "react";
 
-// eslint-disable-next-line react-refresh/only-export-components
 const TanStackRouterDevtools = import.meta.env.PROD
   ? () => null // Render nothing in production
   : React.lazy(async () =>
@@ -13,12 +12,10 @@ const TanStackRouterDevtools = import.meta.env.PROD
     );
 
 const Root = (): JSX.Element => (
-  <>
-    <Suspense fallback={<>Loading ...</>}>
-      <Outlet />
-      <TanStackRouterDevtools />
-    </Suspense>
-  </>
+  <Suspense fallback={<>Loading ...</>}>
+    <Outlet />
+    <TanStackRouterDevtools />
+  </Suspense>
 );
 
 export default Root;

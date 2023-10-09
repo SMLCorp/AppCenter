@@ -1,5 +1,5 @@
 import { SignedIn, SignedOut } from "@clerk/clerk-react";
-import { css } from "@SMlCorp/styled-system/css";
+import { css } from "@SMLCorp/styled-system/css";
 import { Navigate, Outlet } from "@tanstack/react-router";
 
 import { Menu } from "../components/menu";
