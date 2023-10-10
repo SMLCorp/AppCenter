@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@SMLCorp/shadow-panda": "workspace:^",
+    "@clerk/clerk-react": "4.26.3",
     "@tanstack/react-router": "0.0.1-beta.194",
     "@tanstack/router-devtools": "0.0.1-beta.194",
     "lucide-react": "0.279.0",
@@ -25,6 +26,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@clerk/types": "^3.54.0",
     "@nx/eslint-plugin": "16.10.0",
     "@pandacss/dev": "0.15.5",
     "@pandacss/preset-panda": "0.15.5",
