@@ -5,12 +5,11 @@ import { Link } from "@tanstack/react-router";
 import {
   Album,
   BadgeAlert,
+  Blocks,
   Compass,
   History,
   MoreHorizontal,
 } from "lucide-react";
-
-import { libraryRoute } from "../routes/routes";
 
 const MenuButton = ({
   children,
@@ -35,7 +34,7 @@ const MenuButton = ({
 export const Menu = (): JSX.Element => (
   <ul
     className={flex({
-      backgroundColor: "blue.300",
+      backgroundColor: "red",
       position: "sticky",
       bottom: "0",
       direction: "row",
@@ -44,23 +43,15 @@ export const Menu = (): JSX.Element => (
       height: "100%",
     })}
   >
-    <li
-      className={css({
-        width: "18%",
-      })}
-    >
+    <li className={css({ width: "16%" })}>
       <MenuButton>
-        <Link to={libraryRoute.to}>
-          <Album />
+        <Link to="/library">
+          <Album size={24} strokeWidth={1} />
           Library
         </Link>
       </MenuButton>
     </li>
-    <li
-      className={css({
-        width: "18%",
-      })}
-    >
+    <li className={css({ width: "16%" })}>
       <MenuButton>
         <Link to="/updates">
           <BadgeAlert />
@@ -68,11 +59,7 @@ export const Menu = (): JSX.Element => (
         </Link>
       </MenuButton>
     </li>
-    <li
-      className={css({
-        width: "18%",
-      })}
-    >
+    <li className={css({ width: "16%" })}>
       <MenuButton>
         <Link to="/history">
           <History />
@@ -80,11 +67,15 @@ export const Menu = (): JSX.Element => (
         </Link>
       </MenuButton>
     </li>
-    <li
-      className={css({
-        width: "18%",
-      })}
-    >
+    <li className={css({ width: "16%" })}>
+      <MenuButton>
+        <Link to="/extensions">
+          <Blocks />
+          Plugins
+        </Link>
+      </MenuButton>
+    </li>
+    <li className={css({ width: "16%" })}>
       <MenuButton>
         <Link to="/browse">
           <Compass />
@@ -92,11 +83,7 @@ export const Menu = (): JSX.Element => (
         </Link>
       </MenuButton>
     </li>
-    <li
-      className={css({
-        width: "18%",
-      })}
-    >
+    <li className={css({ width: "16%" })}>
       <MenuButton>
         <Link to="/settings">
           <MoreHorizontal />

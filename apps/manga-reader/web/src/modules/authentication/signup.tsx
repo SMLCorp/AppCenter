@@ -1,7 +1,7 @@
 import { SignUp as Register } from "@clerk/clerk-react";
 import { css } from "@SMLCorp/styled-system/css";
 
-import { loginRoute, signupRoute } from "../routes/routes";
+import { loginRoute, signupRoute } from "./routes";
 
 const SignUp = (): JSX.Element => (
   <div

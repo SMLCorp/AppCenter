@@ -1,9 +1,9 @@
 import { SignIn } from "@clerk/clerk-react";
 import { css } from "@SMLCorp/styled-system/css";
 
-import { loginRoute, signupRoute } from "../routes/routes";
+import { loginRoute, signupRoute } from "./routes";
 
-const Login = (): JSX.Element => (
+export const Login = (): JSX.Element => (
   <div
     className={css({
       display: "flex",

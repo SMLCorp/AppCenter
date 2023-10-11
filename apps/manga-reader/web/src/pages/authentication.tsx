@@ -3,28 +3,27 @@ import { css } from "@SMLCorp/styled-system/css";
 import { Navigate, Outlet } from "@tanstack/react-router";
 
 import { Menu } from "../components/menu";
-import { loginRoute } from "./routes";
 
 const Auth = (): JSX.Element => (
   <>
     <SignedIn>
       <main
         className={css({
-          height: "90svh",
+          height: "90dvh",
         })}
       >
         <Outlet />
       </main>
       <nav
         className={css({
-          height: "10svh",
+          height: "10dvh",
         })}
       >
         <Menu />
       </nav>
     </SignedIn>
     <SignedOut>
-      <Navigate to={loginRoute.to} />
+      <Navigate to="/sign-in" />
     </SignedOut>
   </>
 );

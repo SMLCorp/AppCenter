@@ -6,7 +6,7 @@ module.exports = {
     "plugin:@typescript-eslint/stylistic-type-checked",
     "plugin:react-hooks/recommended",
   ],
-  ignorePatterns: ["dist/*", ".eslintrc.cjs"],
+  ignorePatterns: ["dist/*", ".eslintrc.cjs", "vite.config.ts"],
   parser: "@typescript-eslint/parser",
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   plugins: ["react-refresh", "@typescript-eslint"],
