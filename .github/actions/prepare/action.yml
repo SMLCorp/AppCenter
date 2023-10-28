@@ -97,4 +97,4 @@ runs:
         key: ${{ env.NODE_KEY }}
 
     - name: Derive appropriate SHAs for base and head for `nx affected` commands
-      uses: nrwl/nx-set-shas@v3
+      uses: nrwl/nx-set-shas@v4
