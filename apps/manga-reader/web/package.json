@@ -26,7 +26,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@clerk/types": "^3.54.0",
+    "@clerk/types": "3.54.0",
     "@nx/eslint-plugin": "16.10.0",
     "@pandacss/dev": "0.15.5",
     "@pandacss/preset-panda": "0.15.5",
