@@ -9,7 +9,7 @@
   "private": true,
   "devDependencies": {
     "@nx/eslint-plugin": "16.10.0",
-    "@vitejs/plugin-react": "4.1.0",
+    "@vitejs/plugin-react": "4.2.0",
     "@pandacss/dev": "0.15.5",
     "@pandacss/types": "0.15.5",
     "@typescript-eslint/eslint-plugin": "6.7.4",
@@ -30,7 +30,7 @@
     "prettier-plugin-svelte": "3.0.3",
     "tsup": "7.2.0",
     "typescript": "5.2.2",
-    "vite": "4.4.10",
+    "vite": "4.5.0",
     "vite-plugin-ssr": "0.4.142"
   }
 }
