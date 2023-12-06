@@ -38,7 +38,7 @@
     "@shadow-panda/preset": "0.7.1",
     "@types/react": "18.2.42",
     "@types/react-dom": "18.2.17",
-    "vite": "4.5.0",
+    "vite": "4.5.1",
     "vite-plugin-dts": "3.6.4"
   }
 }
