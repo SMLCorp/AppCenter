@@ -39,6 +39,6 @@
     "@types/react": "18.2.42",
     "@types/react-dom": "18.2.17",
     "vite": "4.5.0",
-    "vite-plugin-dts": "3.6.3"
+    "vite-plugin-dts": "3.6.4"
   }
 }

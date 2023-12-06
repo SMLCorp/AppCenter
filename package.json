@@ -9,7 +9,7 @@
   "private": true,
   "devDependencies": {
     "@nx/eslint-plugin": "16.10.0",
-    "@vitejs/plugin-react": "4.2.0",
+    "@vitejs/plugin-react": "4.2.1",
     "@pandacss/dev": "0.19.0",
     "@pandacss/types": "0.19.0",
     "@typescript-eslint/eslint-plugin": "6.13.1",
