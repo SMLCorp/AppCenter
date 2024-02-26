@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     pkg-config g++ gcc make python3
 
-COPY --from=golang:1.21.5-bullseye /usr/local/go/ /usr/local/go/
+COPY --from=golang:1.21.6-bullseye /usr/local/go/ /usr/local/go/
 ENV PATH="$PATH:/usr/local/go/bin"
 
 COPY --from=node:20.6.1-bullseye-slim /usr/local/ /usr/local/
