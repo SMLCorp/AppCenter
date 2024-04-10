@@ -48,7 +48,7 @@
     "eslint-plugin-unicorn": "47.0.0",
     "eslint-plugin-unused-imports": "2.0.0",
     "typescript": "5.3.3",
-    "vite": "4.5.2",
+    "vite": "4.5.3",
     "vite-tsconfig-paths": "4.3.1"
   }
 }
