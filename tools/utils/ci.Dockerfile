@@ -13,7 +13,7 @@ ENV PATH="$PATH:/usr/local/lib/node_modules/.bin"
 RUN npm install -g pnpm@8.8.0
 
 #RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-COPY --from=rust:1.72-slim-bullseye /usr/local/ /usr/local/
+COPY --from=rust:1.79-slim-bullseye /usr/local/ /usr/local/
 ENV PATH="$PATH:/usr/local/cargo/bin"
 ENV RUSTUP_HOME=/usr/local/rustup
 ENV CARGO_HOME=/usr/local/cargo
