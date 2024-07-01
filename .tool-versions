@@ -1,4 +1,4 @@
 nodejs 20.6.1
 golang 1.21.6
-rust 1.72.1
+rust 1.79.0
 pnpm 8.8.0
