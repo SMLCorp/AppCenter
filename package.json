@@ -10,8 +10,8 @@
   "devDependencies": {
     "@nx/eslint-plugin": "16.10.0",
     "@vitejs/plugin-react": "4.2.1",
-    "@pandacss/dev": "0.33.0",
-    "@pandacss/types": "0.33.0",
+    "@pandacss/dev": "0.41.0",
+    "@pandacss/types": "0.41.0",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
     "eslint": "8.57.0",
@@ -26,10 +26,10 @@
     "eslint-plugin-unicorn": "47.0.0",
     "eslint-plugin-unused-imports": "2.0.0",
     "nx": "16.10.0",
-    "prettier": "3.2.5",
-    "prettier-plugin-svelte": "3.2.2",
+    "prettier": "3.3.2",
+    "prettier-plugin-svelte": "3.2.5",
     "tsup": "7.2.0",
-    "typescript": "5.3.3",
+    "typescript": "5.5.2",
     "vite": "4.5.3",
     "vite-plugin-ssr": "0.4.142"
   }

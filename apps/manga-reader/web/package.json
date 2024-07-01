@@ -26,10 +26,10 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@clerk/types": "3.62.1",
+    "@clerk/types": "3.65.2",
     "@nx/eslint-plugin": "16.10.0",
-    "@pandacss/dev": "0.33.0",
-    "@pandacss/preset-panda": "0.33.0",
+    "@pandacss/dev": "0.41.0",
+    "@pandacss/preset-panda": "0.41.0",
     "@types/node": "18.19.21",
     "@types/react": "18.2.63",
     "@types/react-dom": "18.2.19",
@@ -47,7 +47,7 @@
     "eslint-plugin-sonarjs": "0.24.0",
     "eslint-plugin-unicorn": "47.0.0",
     "eslint-plugin-unused-imports": "2.0.0",
-    "typescript": "5.3.3",
+    "typescript": "5.5.2",
     "vite": "4.5.3",
     "vite-tsconfig-paths": "4.3.1"
   }
