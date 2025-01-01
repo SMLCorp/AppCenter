@@ -224,8 +224,8 @@ importers:
         specifier: 1.0.2
         version: 1.0.2(@types/react@18.2.63)(react@18.2.0)
       '@shadow-panda/style-context':
-        specifier: 0.7.0
-        version: 0.7.0(@types/react-dom@18.2.19)(@types/react@18.2.63)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 0.7.1
+        version: 0.7.1(@types/react-dom@18.2.19)(@types/react@18.2.63)(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -3660,11 +3660,11 @@ packages:
       '@pandacss/preset-panda': 0.15.5
     dev: true
 
-  /@shadow-panda/style-context@0.7.0(@types/react-dom@18.2.19)(@types/react@18.2.63)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-9Fog3okXfjBSLX3OVg4F+6ijCY8XQU75gkWkYHV/K8BK1js7533dUTVxoXW938MmQS+dvsw3M7Kym4YtmzYugQ==}
+  /@shadow-panda/style-context@0.7.1(@types/react-dom@18.2.19)(@types/react@18.2.63)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-1vNZewZvqUWyiSX0+BxIYrqPP/7QUgjqKITMw6RALdz6AqnlPIB+EBIvbnScsa++7NrnUbxe/XKem2wzeZy3RA==}
     peerDependencies:
-      '@types/react': 18.2.22
-      '@types/react-dom': 18.2.7
+      '@types/react': ^18.2
+      '@types/react-dom': ^18.2
       react: ^16.8 || ^17.0 || ^18.0
       react-dom: ^16.8 || ^17.0 || ^18.0
     peerDependenciesMeta:
