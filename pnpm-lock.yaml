@@ -106,8 +106,8 @@ importers:
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@clerk/types':
-        specifier: 3.62.1
-        version: 3.62.1
+        specifier: 3.65.5
+        version: 3.65.5
       '@nx/eslint-plugin':
         specifier: 16.10.0
         version: 16.10.0(@types/node@18.19.21)(@typescript-eslint/parser@6.21.0)(eslint-config-prettier@8.10.0)(eslint@8.57.0)(nx@16.10.0)(typescript@5.3.3)
@@ -1944,13 +1944,15 @@ packages:
   /@clerk/types@3.54.0:
     resolution: {integrity: sha512-ZFS8Vz2elyxzupuTd7VO++TrzMmbhsgszriDSQKGCf69KeegZqGJ8QhzUWMcB7Ro/991bUKbZ56QF3x49j8Lbg==}
     engines: {node: '>=14'}
+    deprecated: 'This package is no longer supported. Please import types from @clerk/shared/types instead. See the upgrade guide for more info: https://clerk.com/docs/guides/development/upgrading/upgrade-guides/core-3'
     dependencies:
       csstype: 3.1.1
     dev: false
 
-  /@clerk/types@3.62.1:
-    resolution: {integrity: sha512-RmQhWB7EMZw2nE24viQG79VyEUULZYWndYew5oXiZx06DyvysMNCorDyEGRmgBbprv7bnbYhHdOtKmx8Wj0jug==}
+  /@clerk/types@3.65.5:
+    resolution: {integrity: sha512-RGO8v2a52Ybo1jwVj42UWT8VKyxAk/qOxrkA3VNIYBNEajPSmZNa9r9MTgqSgZRyz1XTlQHdVb7UK7q78yAGfA==}
     engines: {node: '>=14'}
+    deprecated: 'This package is no longer supported. Please import types from @clerk/shared/types instead. See the upgrade guide for more info: https://clerk.com/docs/guides/development/upgrading/upgrade-guides/core-3'
     dependencies:
       csstype: 3.1.1
     dev: true
